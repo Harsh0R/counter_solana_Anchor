@@ -24,7 +24,7 @@ function App() {
           <Increment
             counter={counter}
             setTransactionUri={setTransactionUrl}
-            setCounter={setCounter}  // Make sure to pass setCounter here
+            setCounter={setCounter}  
           />
 
         </VStack>

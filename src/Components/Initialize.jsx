@@ -2,6 +2,7 @@ import { useAnchorWallet, useConnection } from '@solana/wallet-adapter-react';
 import * as anchor from '@project-serum/anchor';
 import React, { useEffect, useState } from 'react';
 import idl from '../../idl.json';
+import styles from "./compStyle.module.css"
 
 const PROGRAM_ID = new anchor.web3.PublicKey(
   '9sMy4hnC9MML6mioESFZmzpntt3focqwUq1ymPgbMf64'
@@ -14,7 +15,7 @@ const Initialize = ({ setCounter, setTransactionUrl }) => {
 
   useEffect(() => {
     if (!connection || !wallet) {
-      console.error('Connection or wallet is not available');
+      console.log('Connection or wallet is not available');
       return;
     }
 
@@ -50,7 +51,7 @@ const Initialize = ({ setCounter, setTransactionUrl }) => {
   };
 
   return (
-    <button onClick={initializeCont} disabled={!program}>
+    <button onClick={initializeCont} className={styles.btn} disabled={!program}>
       Initialize
     </button>
   );
